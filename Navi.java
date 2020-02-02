@@ -66,13 +66,13 @@ class Navi{
         //Errechne die Laenge und gib die Wegbeschreibung
         //Finde den Ziel Knoten K = ziel (aber mit Vorgänger)
         
-        String beschreibung = start.getID() + " ";
+        String beschreibung = "";
         double distanz = K.getDistanz();
         while(!K.getID().equals(start.getID())){
             beschreibung += K.getID() + " ";
             K = K.getVorgaenger();
         }
-        beschreibung += ziel.getID();
+        beschreibung += start.getID();
         System.out.println("Weg: " + beschreibung + " Distanz: " + distanz);
 
         
@@ -81,8 +81,8 @@ class Navi{
     }
 
     public static void main(String[] args) {
-        Vertex berlin = new Vertex("Berlin");
-        Vertex moskau = new Vertex("Liverpool");
+        Vertex berlin = new Vertex("Barcelona");
+        Vertex moskau = new Vertex("Hamburg");
         new Navi().dijkstra(berlin, moskau);
     }
 
